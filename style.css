@@ -1,0 +1,109 @@
+/* ===== 1. RANGLAR (kerak bo'lsa shu yerda o'zgartirasiz) ===== */
+:root{
+  --bg:#E8F6DC; --ink:#123A21; --muted:#4F7A5B; --brand:#1B8A3E; --brand-ink:#fff;
+  --accent:#F0475A; --card:#fff; --t1:#C9EBB0; --t2:#FFD0D5; --t3:#FFF0A8;
+}
+
+/* ===== 2. UMUMIY ===== */
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Nunito",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;padding-bottom:96px}
+h1,h2,h3,.brand{font-family:"Fredoka","Nunito",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+
+/* Tugmalar */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:999px;font:800 .95rem "Nunito",sans-serif;text-decoration:none;border:2px solid var(--brand);background:transparent;color:var(--brand);cursor:pointer}
+.btn.solid{background:var(--brand);color:var(--brand-ink)}
+.btn:hover{filter:brightness(.94)}
+
+/* ===== 3. TEPA QISM ===== */
+header{padding:12px 0}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.brand{font-size:1.5rem;font-weight:700;text-decoration:none;color:var(--brand)}
+.brand span{color:var(--ink)}
+.head-actions{display:flex;gap:8px}
+
+/* ===== 4. BOSH QISM ===== */
+.hero{padding:18px 0 8px}
+.hero .wrap{display:grid;gap:20px}
+.hero h1{font-size:2.1rem;line-height:1.1;font-weight:700}
+.hero p{margin:12px 0 16px;font-size:1.05rem;color:var(--muted);max-width:44ch}
+.updated{display:inline-block;background:var(--card);padding:8px 16px;border-radius:999px;font-weight:800;font-size:.9rem}
+.updated b{color:var(--brand)}
+.blob{background:var(--t1);border-radius:46% 54% 58% 42% / 52% 44% 56% 48%;display:grid;grid-template-columns:repeat(3,1fr);place-items:center;font-size:2.4rem;padding:16px;max-width:340px}
+
+/* ===== 5. SARALASH TUGMALARI ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 14px}
+.tab{padding:9px 16px;border-radius:999px;border:2px solid var(--brand);background:transparent;color:var(--brand);font:800 .95rem "Nunito",sans-serif;cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink)}
+
+/* ===== 6. MAHSULOT KARTALARI (telefonda 2 ustun) ===== */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.item{background:var(--card);border-radius:22px;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative}
+.pic{height:90px;border-radius:16px;display:grid;place-items:center;font-size:2.8rem;background:var(--t1);overflow:hidden}
+.item:nth-child(3n+2) .pic{background:var(--t2)}
+.item:nth-child(3n) .pic{background:var(--t3)}
+.pic img{width:100%;height:100%;object-fit:cover}
+.item h3{font-size:1.1rem;font-weight:600;line-height:1.2}
+.price{font:700 1.2rem "Fredoka",sans-serif;color:var(--brand)}
+.price small{font:600 .8rem "Nunito",sans-serif;color:var(--muted)}
+.item .btn,.item .step{margin-top:auto}
+.item .btn{justify-content:center;padding:8px 10px;font-size:.9rem}
+.item.out{opacity:.6}
+.badge{position:absolute;top:20px;left:20px;background:var(--ink);color:var(--bg);padding:3px 12px;border-radius:999px;font-weight:800;font-size:.8rem}
+.empty{padding:30px 0;color:var(--muted);font-weight:600}
+
+/* ===== 7. PASTKI QISM ===== */
+footer{margin-top:40px;padding:26px 0;background:var(--brand);color:var(--brand-ink)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer a{font-weight:800}
+
+/* ===== 8. SAVAT (6-qadamda ishga tushadi) ===== */
+.step{display:flex;align-items:center;justify-content:space-between;background:var(--t1);border-radius:999px;padding:4px;gap:6px}
+.step button{width:36px;height:36px;border-radius:50%;border:0;background:var(--brand);color:#fff;font:700 1.3rem "Fredoka",sans-serif;cursor:pointer;line-height:1}
+.step span{font-weight:800;padding:0 4px;text-align:center;flex:1}
+.cartbar{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);width:min(560px,calc(100% - 28px));background:var(--ink);color:#fff;border-radius:999px;padding:8px 8px 8px 22px;display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:9;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.cartbar[hidden]{display:none}
+.cartbar .btn{background:var(--brand);color:#fff;border-color:var(--brand);padding:9px 18px}
+dialog{border:0;border-radius:26px;padding:0;width:min(560px,calc(100% - 24px));max-height:92vh;background:var(--bg);color:var(--ink)}
+dialog::backdrop{background:rgba(18,58,33,.55)}
+.dlg-in{padding:20px}
+.dlg-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.dlg-head h2{font-size:1.6rem}
+.row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;background:var(--card);border-radius:18px;padding:10px 12px;margin-top:8px}
+.row b{grid-column:1/-1;text-align:right}
+.row small{color:var(--muted)}
+.row .step{min-width:130px}
+.total{font:700 1.3rem "Fredoka",sans-serif;margin:16px 0 4px;text-align:right}
+label{display:block;font-weight:800;margin-top:12px}
+input{width:100%;margin-top:4px;padding:12px 14px;border-radius:14px;border:2px solid var(--t1);font:inherit;background:#fff;color:var(--ink)}
+.err{color:#C0233A;font-weight:800;min-height:1.4em;margin-top:10px}
+form .btn{width:100%;justify-content:center}
+.hint{font-size:.9rem;color:var(--muted);margin-top:8px}
+.link{background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;font:inherit;margin-top:10px}
+
+/* ===== 9. KATTA EKRANLAR (kompyuter, planshet) ===== */
+@media (min-width:720px){
+  .wrap{padding:0 20px}
+  header{padding:16px 0}
+  .brand{font-size:1.6rem}
+  .btn{padding:11px 20px;font-size:1rem}
+  .hero{padding:28px 0 20px}
+  .hero .wrap{grid-template-columns:1.2fr 1fr;align-items:center;gap:24px}
+  .hero h1{font-size:3.4rem}
+  .blob{font-size:3.6rem;padding:18px;max-width:none}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+  .item{padding:16px;border-radius:26px;gap:10px}
+  .pic{height:120px;font-size:3.6rem;border-radius:20px}
+  .item h3{font-size:1.25rem}
+  .price{font-size:1.5rem}
+  .badge{top:24px;left:24px}
+  .row{grid-template-columns:1fr auto auto}
+  .row b{grid-column:auto}
+}
+
+/* Harakatni kamaytirishni so'ragan foydalanuvchilar uchun */
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.btn:disabled{opacity:.45;cursor:not-allowed}

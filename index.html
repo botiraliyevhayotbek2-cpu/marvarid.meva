@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <!-- Telefon ekraniga moslashish uchun shu qator shart -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>marvarid.meva — yangi meva va sabzavotlar</title>
+  <meta name="description" content="Har kuni yangi meva va sabzavotlar. Bugungi narxlar va buyurtma.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Tepa qism: nom va aloqa tugmalari -->
+  <header>
+    <div class="wrap">
+      <a class="brand" href="#">marvarid<span>.meva</span></a>
+      <div class="head-actions">
+        <a class="btn" id="callBtn" href="#">📞 Qo'ng'iroq</a>
+        <a class="btn solid" id="tgBtn" href="#" target="_blank" rel="noopener">✈️ Telegram</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Bosh qism: sarlavha va yangilangan sana -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Har kuni yangi meva va sabzavotlar</h1>
+        <p>Mahsulotlarni savatga soling va buyurtmani Telegram orqali yuboring.</p>
+        <span class="updated">Narxlar yangilangan sana: <b id="updated"></b></span>
+      </div>
+      <div class="blob" aria-hidden="true"><span>🍎</span><span>🥕</span><span>🍇</span><span>🍌</span><span>🧅</span><span>🍍</span></div>
+    </div>
+  </section>
+
+  <!-- Mahsulotlar shu yerga JavaScript orqali chiqadi -->
+  <main class="wrap">
+    <div class="tabs" role="group" aria-label="Turi bo'yicha saralash">
+      <button class="tab" data-f="all" aria-pressed="true">Hammasi</button>
+      <button class="tab" data-f="sabzavot" aria-pressed="false">Sabzavotlar</button>
+      <button class="tab" data-f="meva" aria-pressed="false">Mevalar</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <!-- Pastki qism -->
+  <footer>
+    <div class="wrap">
+      <div>
+        <strong class="brand" style="font-size:1.3rem">marvarid.meva</strong><br>
+        <span id="footAddr"></span>
+      </div>
+      <div>Buyurtma: <a id="footPhone" href="#"></a></div>
+    </div>
+  </footer>
+
+  <!-- Savat paneli (pastda chiqib turadi) -->
+  <div class="cartbar" id="cartbar" hidden>
+    <span>🛒 <b id="cartInfo"></b></span>
+    <button class="btn" type="button" id="openCart">Savatni ochish</button>
+  </div>
+
+  <!-- Savat oynasi: mahsulotlar + telefon, manzil, mo'ljal -->
+  <dialog id="cartDlg" aria-labelledby="cartTitle">
+    <div class="dlg-in">
+      <div class="dlg-head"><h2 id="cartTitle">Savatingiz</h2><button class="btn" type="button" id="closeCart">Yopish</button></div>
+      <div id="cartList"></div>
+      <p class="total">Jami: <b id="cartTotal"></b></p>
+      <form id="orderForm" novalidate>
+        <label>Telefon raqamingiz<input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+998 90 123 45 67"></label>
+        <label>Manzil (shahar, ko'cha, uy)<input id="fAddr" autocomplete="street-address" placeholder="Masalan: Toshkent, Chilonzor 5-mavze, 12-uy"></label>
+        <label>Mo'ljal<input id="fLand" placeholder="Masalan: maktab yonida, ko'k darvoza"></label>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn solid" type="submit">Telegramga yuborish</button>
+        <p class="hint">Telegram ochiladi. Buyurtma xabarini yuborish (➤) tugmasini bosing.</p>
+      </form>
+      <button class="link" type="button" id="clearCart">Savatni tozalash</button>
+    </div>
+  </dialog>
+
+  <!-- Dastur fayllari (keyingi qadamlarda yozamiz) -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
