@@ -107,3 +107,49 @@ form .btn{width:100%;justify-content:center}
 /* Harakatni kamaytirishni so'ragan foydalanuvchilar uchun */
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .btn:disabled{opacity:.45;cursor:not-allowed}
+/* ===== AKSIYA ===== */
+.promo{
+  background: linear-gradient(135deg, var(--accent), #ff8a3d);
+  padding:18px 0 20px;
+  margin-bottom:22px;
+  border-radius:0 0 28px 28px;
+}
+.promo h2{
+  color:#fff;
+  font-size:1.5rem;
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.promo-row{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.promo-row::-webkit-scrollbar{height:6px}
+.promo-row::-webkit-scrollbar-thumb{background:rgba(255,255,255,.5);border-radius:99px}
+
+.promo-card{
+  flex:0 0 155px;
+  scroll-snap-align:start;
+  background:#fff;
+  border-radius:20px;
+  padding:12px;
+  position:relative;
+  box-shadow:0 8px 18px rgba(0,0,0,.18);
+}
+.promo-card .pic{height:82px;border-radius:14px;display:grid;place-items:center;font-size:2.5rem;background:var(--t1)}
+.promo-card h3{font-size:1rem;margin-top:8px;color:var(--ink)}
+.promo-card .old{color:var(--muted);text-decoration:line-through;font-size:.85rem}
+.promo-card .new{color:var(--accent);font:800 1.15rem "Fredoka",sans-serif}
+.promo-tag{
+  position:absolute;top:-10px;right:10px;
+  background:var(--ink);color:#fff;
+  font:800 .78rem "Nunito",sans-serif;
+  padding:4px 11px;border-radius:999px;
+  box-shadow:0 3px 8px rgba(0,0,0,.25);
+}
+
+@media (min-width:720px){
+  .promo{padding:26px 0 28px;border-radius:0 0 36px 36px}
+  .promo h2{font-size:1.9rem}
+  .promo-card{flex-basis:190px;padding:16px}
+  .promo-card .pic{height:110px;font-size:3.2rem}
+}

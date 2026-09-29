@@ -14,7 +14,52 @@ $("#footPhone").textContent = SETTINGS.phone;
 $("#tgBtn").href = "https://t.me/" + SETTINGS.telegram;
 $("#updated").textContent = SETTINGS.updated;
 $("#footAddr").textContent = SETTINGS.address;
+// ===== AKSIYA BO'LIMI =====
+function renderPromo(){
+  const list = items.filter(p => p.promo && p.available);
+  const section = $("#promoSection");
+  const row = $("#promoRow");
+  row.textContent = "";
 
+  if(!list.length){ section.hidden = true; return; }
+  section.hidden = false;
+
+  list.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "promo-card";
+
+    const pic = document.createElement("div");
+    pic.className = "pic";
+    pic.textContent = p.emoji || "🍏";
+
+    const name = document.createElement("h3");
+    name.textContent = p.name;
+
+    const price = document.createElement("div");
+    if(p.oldPrice){
+      const old = document.createElement("div");
+      old.className = "old";
+      old.textContent = fmt(p.oldPrice);
+      price.appendChild(old);
+    }
+    const now = document.createElement("div");
+    now.className = "new";
+    now.textContent = fmt(p.price);
+    price.appendChild(now);
+
+    card.append(pic, name, price);
+
+    if(p.oldPrice && p.oldPrice > p.price){
+      const percent = Math.round((1 - p.price / p.oldPrice) * 100);
+      const tag = document.createElement("span");
+      tag.className = "promo-tag";
+      tag.textContent = "-" + percent + "%";
+      card.appendChild(tag);
+    }
+
+    row.appendChild(card);
+  });
+}
 
 // ===== 2. MAHSULOTLARNI EKRANGA CHIQARISH =====
 function render(){
@@ -248,3 +293,4 @@ $("#orderForm").addEventListener("submit", e => {
 // ===== ISHGA TUSHIRISH =====
 render();
 renderCart();
+renderPromo();
