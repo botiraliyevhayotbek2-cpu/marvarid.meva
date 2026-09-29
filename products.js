@@ -10,7 +10,7 @@ const SETTINGS = {
 // ===== MAHSULOTLAR VA NARXLAR =====
 const PRODUCTS = [
   // ---- MEVALAR ----
-  { name: "Banan",                          type: "meva", price: 17900,  unit: "kg",   emoji: "🍌", img: "", available: true },
+  { name: "Banan",                          type: "meva", price: 17800,  unit: "kg",   emoji: "🍌", img: "", available: true },
   { name: "Uzum \"Kishmish\"",               type: "meva", price: 15200,  unit: "kg",   emoji: "🍇", img: "", available: true },
   { name: "Uzum \"Oq Husayn\"",              type: "meva", price: 15900,  unit: "kg",   emoji: "🍇", img: "", available: true },
   { name: "Uzum \"Damskaya palochka\"",      type: "meva", price: 28800,  unit: "kg",   emoji: "🍇", img: "", available: true },
