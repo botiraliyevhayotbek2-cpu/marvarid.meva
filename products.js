@@ -26,8 +26,8 @@ const PRODUCTS = [
   { name: "Kivi (Eron)",                    type: "meva", price: 31500,  unit: "kg",   emoji: "🥝", img: "", available: true },
   { name: "Mandarin mayda \"Medovka\"",      type: "meva", price: 27900,  unit: "kg",   emoji: "🍊", img: "", available: true },
   { name: "Limon (mestniy)",                type: "meva", price: 29500,  unit: "kg",   emoji: "🍋", img: "", available: true },
-    { name: "Ananas", type: "meva", price: 12000, unit: "dona", emoji: "🍍", img: "", available: true, promo: true },
-  { name: "Nok",     type: "meva", price: 15000, unit: "kg",   emoji: "🍐", img: "", available: true, promo: true },
+    { name: "Ananas", type: "meva", price: 13500, unit: "dona", emoji: "🍍", img: "", available: true, promo: true },
+  { name: "Nok",     type: "meva", price: 8900, unit: "kg",   emoji: "🍐", img: "", available: true, promo: true },
 
   // ---- SABZAVOTLAR ----
   { name: "Ukrop",                          type: "sabzavot", price: 1500,  unit: "dona", emoji: "🌿", img: "", available: true },
