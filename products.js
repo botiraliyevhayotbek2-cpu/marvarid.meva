@@ -28,6 +28,7 @@ const PRODUCTS = [
   { name: "Limon (mestniy)",                type: "meva", price: 29500,  unit: "kg",   emoji: "🍋", img: "", available: true },
     { name: "Ananas", type: "meva", price: 13500, unit: "dona", emoji: "🍍", img: "", available: true, promo: true },
   { name: "Nok",     type: "meva", price: 8900, unit: "kg",   emoji: "🍐", img: "", available: true, promo: true },
+{ name: "Mandarin bargli (Xitoy)",        type: "meva", price: 19000,  unit: "kg",   emoji: "🍊", img: "", available: true, promo: true },
 
   // ---- SABZAVOTLAR ----
   { name: "Ukrop",                          type: "sabzavot", price: 1500,  unit: "dona", emoji: "🌿", img: "", available: true },
