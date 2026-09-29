@@ -153,3 +153,7 @@ form .btn{width:100%;justify-content:center}
   .promo-card{flex-basis:190px;padding:16px}
   .promo-card .pic{height:110px;font-size:3.2rem}
 }
+.promo-card .btn,
+.promo-card .step{margin-top:8px;width:100%;justify-content:center}
+.promo-card .step{padding:3px}
+.promo-card .step button{width:30px;height:30px;font-size:1.1rem}

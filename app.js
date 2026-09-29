@@ -15,6 +15,7 @@ $("#tgBtn").href = "https://t.me/" + SETTINGS.telegram;
 $("#updated").textContent = SETTINGS.updated;
 $("#footAddr").textContent = SETTINGS.address;
 // ===== AKSIYA BO'LIMI =====
+// ===== AKSIYA BO'LIMI =====
 function renderPromo(){
   const list = items.filter(p => p.promo && p.available);
   const section = $("#promoSection");
@@ -47,7 +48,19 @@ function renderPromo(){
     now.textContent = fmt(p.price);
     price.appendChild(now);
 
-    card.append(pic, name, price);
+    // Savatga qo'shish tugmasi yoki miqdor o'zgartirgich
+    let action;
+    if(cart[p.name]){
+      action = stepper(p);            // savatda bor: − miqdor +
+    } else {
+      action = document.createElement("button");
+      action.type = "button";
+      action.className = "btn";
+      action.textContent = "Qo'shish";
+      action.onclick = () => setQty(p, 1);
+    }
+
+    card.append(pic, name, price, action);
 
     if(p.oldPrice && p.oldPrice > p.price){
       const percent = Math.round((1 - p.price / p.oldPrice) * 100);
@@ -163,6 +176,7 @@ function setQty(p, q){
   try { localStorage.setItem("mm_cart", JSON.stringify(cart)); } catch(e) {}
   render();
   renderCart();
+  renderPromo();
 }
 
 // "− 1 kg +" tugmalari
