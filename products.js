@@ -21,7 +21,7 @@ const PRODUCTS = [
   { name: "Uzum \"Maksim\"",                 type: "meva", price: 23700,  unit: "kg",   emoji: "🍇", img: "", available: true },
   { name: "Malina \"Marvarid\"",             type: "meva", price: 127500, unit: "kg",   emoji: "🍓", img: "", available: true },
   { name: "Qovun",                          type: "meva", price: 5500,   unit: "kg",   emoji: "🍈", img: "", available: true },
- { name: "Mandarin bargli (Xitoy)",        type: "meva", price: 22500,  unit: "kg",   emoji: "🍊", img: "", available: true, promo: true },
+ { name: "Mandarin bargli (Xitoy)",        type: "meva", price: 19000,  unit: "kg",   emoji: "🍊", img: "", available: true, promo: true },
   { name: "Citrus Pomelo",                  type: "meva", price: 54000,  unit: "dona", emoji: "🍊", img: "", available: true },
   { name: "Kivi (Eron)",                    type: "meva", price: 31500,  unit: "kg",   emoji: "🥝", img: "", available: true },
   { name: "Mandarin mayda \"Medovka\"",      type: "meva", price: 27900,  unit: "kg",   emoji: "🍊", img: "", available: true },
